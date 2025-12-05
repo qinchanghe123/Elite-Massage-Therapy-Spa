@@ -1,897 +1,524 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>King Foot Massage</title>
-    <meta
-      name="description"
-      content="Experience ultimate relaxation at King Foot Massage, known for exceptional massages tailored to your needs. Clients love our serene environment, skilled therapists, and personalized care. Unwind and recharge with us."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Matemasie&display=swap"
-      rel="stylesheet"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Massage Therapy & Spa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-      /* Comfort Spa Stylesheet */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap');
 
-      /* Base Styles */
-      body {
-        font-family: 'Josefin Sans', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f9f9f9;
-        color: #333;
-        line-height: 1.6;
-      }
-
-      h1, h2, h3, h4, h5, h6 {
-        font-weight: 600;
-        margin-bottom: 1rem;
-      }
-
-      section {
-        padding: 60px 20px;
-        text-align: center;
-      }
-
-      section h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-        color: #333;
-      }
-
-      section h4 {
-        font-size: 1.2rem;
-        color: #666;
-        margin-bottom: 2rem;
-      }
-
-      /* Navigation */
-      nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-        background-color: #6B73FF; /* Calming purple-blue background */
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      }
-
-      /* Add margin to the top of the body to avoid content being hidden behind the fixed nav */
-      body {
-        margin-top: 70px; /* Adjust based on nav height */
-      }
-
-      nav img {
-        height: 50px;
-      }
-
-      nav ul {
-        list-style: none;
-        display: flex;
-        margin: 0;
-        padding: 0;
-      }
-
-      nav ul li {
-        margin-left: 20px;
-      }
-
-      nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.1rem;
-        transition: color 0.3s ease;
-      }
-
-      nav ul li a:hover {
-        color: #FFD700;
-      }
-
-      /* Home Section */
-      .home {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        background-size: cover;
-        background-position: center;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        text-align: center;
-        margin-top: 70px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .home::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><path d="M0,20 Q250,80 500,20 T1000,20 V100 H0 Z"/></svg>') repeat-x;
-        background-size: 1000px 100px;
-        animation: wave 10s linear infinite;
-      }
-
-      @keyframes wave {
-        0% { background-position-x: 0; }
-        100% { background-position-x: 1000px; }
-      }
-
-      .home-content {
-        background-color: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        padding: 40px;
-        border-radius: 20px;
-        max-width: 800px;
-        margin-bottom: 30px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      }
-
-      .home h1 {
-        font-size: 3.5rem;
-        margin-bottom: 20px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        color: #FFD700;
-        font-weight: 300;
-        letter-spacing: 2px;
-      }
-
-      .spa-tagline {
-        font-size: 1.3rem;
-        margin-bottom: 20px;
-        opacity: 0.9;
-        font-style: italic;
-      }
-
-      /* Gallery Section */
-      #gallery {
-        background: linear-gradient(135deg, #f0f4ff 0%, #e1ecff 100%);
-        padding: 60px 20px;
-      }
-
-      .gallery-container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-        margin: 40px 0;
-      }
-
-      .gallery-item {
-        position: relative;
-        overflow: hidden;
-        border-radius: 15px;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-        cursor: pointer;
-        background: white;
-        aspect-ratio: 4/3;
-      }
-
-      .gallery-item:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-      }
-
-      .gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-
-      .gallery-item:hover img {
-        transform: scale(1.05);
-      }
-
-      .gallery-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, rgba(107, 115, 255, 0.8), rgba(118, 75, 162, 0.8));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-
-      .gallery-item:hover .gallery-overlay {
-        opacity: 1;
-      }
-
-      .gallery-overlay-text {
-        color: white;
-        text-align: center;
-        padding: 20px;
-      }
-
-      .gallery-overlay h3 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-        color: white;
-      }
-
-      .gallery-overlay p {
-        font-size: 1rem;
-        opacity: 0.9;
-      }
-
-      /* Modal for full-size image viewing */
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 2000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.9);
-        animation: fadeIn 0.3s ease;
-      }
-
-      .modal.active {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-      }
-
-      .modal-content {
-        position: relative;
-        max-width: 90%;
-        max-height: 90%;
-        margin: auto;
-      }
-
-      .modal-content img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      }
-
-      .close-modal {
-        position: absolute;
-        top: -40px;
-        right: 0;
-        color: white;
-        font-size: 35px;
-        font-weight: bold;
-        cursor: pointer;
-        background: none;
-        border: none;
-        transition: color 0.3s ease;
-      }
-
-      .close-modal:hover {
-        color: #6B73FF;
-      }
-
-      .gallery-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(255,255,255,0.2);
-        backdrop-filter: blur(10px);
-        color: white;
-        border: none;
-        font-size: 24px;
-        padding: 15px 20px;
-        cursor: pointer;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-      }
-
-      .gallery-nav:hover {
-        background: rgba(255,255,255,0.3);
-        transform: translateY(-50%) scale(1.1);
-      }
-
-      .prev-btn {
-        left: -60px;
-      }
-
-      .next-btn {
-        right: -60px;
-      }
-
-      /* Call and Book Online Section */
-      .contact-buttons {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 20px;
-      }
-
-      .contact-card {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        color: #333;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-        min-width: 300px;
-        transition: all 0.3s ease;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-      }
-
-      .contact-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 35px rgba(0,0,0,0.25);
-      }
-
-      .contact-card h3 {
-        color: #6B73FF;
-        font-size: 1.6rem;
-        margin-bottom: 15px;
-        font-weight: 500;
-      }
-
-      .phone-number {
-        font-size: 1.9rem;
-        font-weight: bold;
-        color: #764ba2;
-        text-decoration: none;
-        display: block;
-        margin: 15px 0;
-        transition: color 0.3s ease;
-      }
-
-      .phone-number:hover {
-        color: #667eea;
-      }
-
-      .contact-card p {
-        color: #666;
-        line-height: 1.5;
-      }
-
-      /* Booking Form */
-      .booking-form {
-        display: none;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(15px);
-        color: #333;
-        padding: 35px;
-        border-radius: 20px;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        max-width: 550px;
-        margin: 20px auto;
-        position: relative;
-        border: 1px solid rgba(255, 255, 255, 0.4);
-      }
-
-      .booking-form.active {
-        display: block;
-        animation: slideIn 0.3s ease-out;
-      }
-
-      @keyframes slideIn {
-        from { opacity: 0; transform: translateY(-20px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-
-      .booking-form h3 {
-        color: #6B73FF;
-        margin-bottom: 25px;
-        font-size: 2rem;
-        font-weight: 400;
-      }
-
-      .form-group {
-        margin-bottom: 20px;
-        text-align: left;
-      }
-
-      .form-group label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: 600;
-        color: #555;
-        font-size: 0.95rem;
-      }
-
-      .form-group input,
-      .form-group select,
-      .form-group textarea {
-        width: 100%;
-        padding: 15px;
-        border: 2px solid #e0e0e0;
-        border-radius: 10px;
-        font-size: 1rem;
-        font-family: inherit;
-        transition: all 0.3s ease;
-        box-sizing: border-box;
-        background: rgba(255, 255, 255, 0.8);
-      }
-
-      .form-group input:focus,
-      .form-group select:focus,
-      .form-group textarea:focus {
-        outline: none;
-        border-color: #6B73FF;
-        background: white;
-        box-shadow: 0 0 0 3px rgba(107, 115, 255, 0.1);
-      }
-
-      .form-row {
-        display: flex;
-        gap: 15px;
-      }
-
-      .form-row .form-group {
-        flex: 1;
-      }
-
-      .close-form {
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        background: none;
-        border: none;
-        font-size: 28px;
-        cursor: pointer;
-        color: #999;
-        transition: color 0.3s ease;
-      }
-
-      .close-form:hover {
-        color: #333;
-        transform: scale(1.1);
-      }
-
-      /* Button Styles */
-      .book-button, .call-button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 15px 30px;
-        border: none;
-        border-radius: 25px;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 1.1rem;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        margin: 10px;
-        cursor: pointer;
-        text-align: center;
-        box-shadow: 0 4px 15px rgba(107, 115, 255, 0.3);
-      }
-
-      .book-button:hover, .call-button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(107, 115, 255, 0.4);
-      }
-
-      .submit-btn {
-        background: linear-gradient(135deg, #6B73FF 0%, #764ba2 100%);
-        color: white;
-        padding: 18px 35px;
-        border: none;
-        border-radius: 25px;
-        font-size: 1.2rem;
-        font-weight: 600;
-        cursor: pointer;
-        width: 100%;
-        transition: all 0.3s ease;
-        margin-top: 15px;
-        box-shadow: 0 4px 15px rgba(107, 115, 255, 0.3);
-      }
-
-      .submit-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(107, 115, 255, 0.4);
-      }
-
-      /* Services and Reviews Containers */
-      .services, .reviews-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 25px;
-        margin: 40px 0;
-      }
-
-      #services {
-        background: linear-gradient(135deg, #f5f7ff 0%, #e8f2ff 100%);
-      }
-
-      #specials {
-        background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
-      }
-
-      #specials .services {
-        background: transparent;
-      }
-
-      /* Service Box and Review Card */
-      .service-box, .review-card {
-        background: white;
-        margin: 10px;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        width: 320px;
-        transition: all 0.3s ease;
-        border: 1px solid rgba(107, 115, 255, 0.1);
-      }
-
-      .service-box:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        border-color: rgba(107, 115, 255, 0.3);
-      }
-
-      .service-box h3, .review-card h3 {
-        color: #6B73FF;
-        font-size: 1.6rem;
-        margin-bottom: 15px;
-        font-weight: 500;
-      }
-
-      .service-box p, .review-card p {
-        color: #666;
-        line-height: 1.7;
-      }
-
-      /* Price Wrapper */
-      .service-box .price-wrapper {
-        margin-top: 20px;
-        background: linear-gradient(135deg, #f8f9ff 0%, #eef1ff 100%);
-        padding: 15px;
-        border-radius: 10px;
-        display: none;
-        min-height: 100px;
-        border-left: 4px solid #6B73FF;
-      }
-
-      .price-wrapper h4 {
-        margin: 5px 0;
-        color: #333;
-        font-size: 1.1rem;
-      }
-
-      /* Contact Section */
-      #contact {
-        background: linear-gradient(135deg, #e8f5e9 0%, #d4eddb 100%);
-      }
-
-      .appointment-card {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .appointment-map {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: white;
-        padding: 40px;
-        border-radius: 20px;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        border: 1px solid rgba(107, 115, 255, 0.1);
-      }
-
-      .appointment-info {
-        margin-top: 30px;
-        text-align: left;
-        width: 100%;
-      }
-
-      .appointment-info p {
-        margin: 15px 0;
-        font-size: 1.2rem;
-        color: #555;
-      }
-
-      .appointment-info a {
-        color: #6B73FF;
-        text-decoration: none;
-        transition: color 0.3s ease;
-        font-weight: 600;
-      }
-
-      .appointment-info a:hover {
-        color: #764ba2;
-        text-decoration: underline;
-      }
-
-      .appointment-map h3 {
-        margin-top: 25px;
-        color: #6B73FF;
-        font-size: 1.4rem;
-        font-weight: 500;
-      }
-
-      /* Footer */
-      footer {
-        background: linear-gradient(135deg, #333 0%, #555 100%);
-        color: white;
-        text-align: center;
-        padding: 30px 0;
-        margin-top: 50px;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        nav {
-          flex-direction: column;
-          padding: 15px;
+        body {
+            font-family: 'Lato', sans-serif;
         }
         
-        nav ul {
-          margin-top: 15px;
+        h1, h2, h3, h4, .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b5952f;
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
         
-        .home h1 {
-          font-size: 2.5rem;
-        }
-
-        .contact-buttons {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .contact-card {
-          min-width: auto;
-          width: 90%;
-          max-width: 400px;
-        }
-
-        .form-row {
-          flex-direction: column;
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 500px; /* Fixed height for consistency */
         }
         
-        .service-box, .review-card {
-          width: 100%;
-          max-width: 400px;
-        }
-
-        .gallery-grid {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-
-        .gallery-nav {
-          display: none;
-        }
-
-        .modal-content {
-          max-width: 95%;
-          max-height: 85%;
-        }
-      }
-
-      @media (max-width: 480px) {
-        section {
-          padding: 40px 15px;
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
         }
         
-        section h2 {
-          font-size: 2rem;
-        }
-        
-        .home-content {
-          padding: 25px;
-        }
-        
-        .home h1 {
-          font-size: 2rem;
-        }
-        
-        .book-button, .call-button {
-          padding: 12px 25px;
-          font-size: 1rem;
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .phone-number {
-          font-size: 1.6rem;
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .gallery-grid {
-          grid-template-columns: 1fr;
-          gap: 15px;
-          margin: 20px 0;
+        .carousel-btn:hover {
+            background: rgba(212, 175, 55, 0.9);
         }
-      }
+
+        .prev-btn { left: 20px; }
+        .next-btn { right: 20px; }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dot.active {
+            background: #D4AF37;
+            transform: scale(1.1);
+        }
+
+        /* Hero Background - Note about 2.avif */
+        /* To use local 2.avif, ensure the file is in the same folder and un-comment the url line below */
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('2.avif'); */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Mobile adjustments for carousel height */
+        @media (max-width: 768px) {
+            .carousel-track {
+                height: 300px;
+            }
+        }
     </style>
-  </head>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
 
-  <body>
-    <!-- Navbar -->
-    <nav>
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#specials">Specials</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="serif-font text-2xl font-bold text-gray-900">
+                        <span class="text-yellow-600">Elite</span> Massage
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-600 hover:text-yellow-600 font-medium transition">Home</a>
+                    <a href="#services" class="text-gray-600 hover:text-yellow-600 font-medium transition">Services</a>
+                    <a href="#gallery" class="text-gray-600 hover:text-yellow-600 font-medium transition">Gallery</a>
+                    <a href="#contact" class="text-gray-600 hover:text-yellow-600 font-medium transition">Contact</a>
+                    <a href="tel:5153461298" class="bg-yellow-600 text-white px-5 py-2 rounded-full hover:bg-yellow-700 transition shadow-lg">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-yellow-600 hover:bg-gray-50">Home</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-yellow-600 hover:bg-gray-50">Services</a>
+                <a href="#gallery" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-yellow-600 hover:bg-gray-50">Gallery</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-yellow-600 hover:bg-gray-50">Contact</a>
+                <a href="tel:5153461298" class="block mt-4 px-5 py-3 rounded-md text-base font-bold text-white bg-yellow-600 hover:bg-yellow-700">Call Now</a>
+            </div>
+        </div>
     </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="home">
-      <div class="home-content">
-        <h1>King Foot Massage</h1>
-        <p class="spa-tagline">Your sanctuary of tranquility and rejuvenation</p>
-      </div>
-
-      <!-- Call and Book Online Cards -->
-      <div class="contact-buttons">
-        <!-- Call Card -->
-        <div class="contact-card">
-          <h3>📞 Call for Appointment</h3>
-          <a href="tel:+1-469-639-0889" class="phone-number">469-639-0889</a>
-          <p>Speak directly with our friendly staff to schedule your perfect massage experience within 30 minutes.</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-screen flex items-center justify-center relative">
+        <div class="text-center text-white px-4 max-w-4xl mx-auto z-10 animate-fade-in-up">
+            <p class="text-lg md:text-xl tracking-widest uppercase mb-4 opacity-90">Welcome to</p>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg leading-tight">Elite Massage <br><span class="text-yellow-400">Therapy & Spa</span></h1>
+            <p class="text-xl md:text-2xl mb-10 font-light opacity-90">Relax, Renew, Revitalize in Des Moines.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#services" class="bg-yellow-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-yellow-700 transition transform hover:scale-105 shadow-xl">
+                    Our Services
+                </a>
+                <a href="#contact" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition transform hover:scale-105 shadow-xl">
+                    Visit Us
+                </a>
+            </div>
         </div>
-
-        <!-- Book Online Card -->
-        <div class="contact-card">
-          <h3>💻 Book Online</h3>
-          <button class="book-button" onclick="showBookingForm()">Schedule Now</button>
-          <p>Use our convenient online form and we'll confirm your appointment within 30 minutes.</p>
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-white opacity-70 hover:opacity-100">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
         </div>
-      </div>
+    </section>
 
-      <!-- Booking Form (Initially Hidden) -->
-      <div id="bookingForm" class="booking-form">
-        <button class="close-form" onclick="hideBookingForm()">&times;</button>
-        <h3>Schedule Your Visit</h3>
-        <form onsubmit="submitBooking(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName">First Name *</label>
-              <input type="text" id="firstName" name="firstName" required>
+    <!-- Info Banner -->
+    <div class="bg-white relative z-20 -mt-8 mx-4 md:mx-auto max-w-5xl shadow-xl rounded-xl grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+        <div class="p-6 flex items-center space-x-4">
+            <div class="bg-yellow-50 p-3 rounded-full text-yellow-600">
+                <i class="fas fa-map-marker-alt text-xl"></i>
             </div>
-            <div class="form-group">
-              <label for="lastName">Last Name *</label>
-              <input type="text" id="lastName" name="lastName" required>
+            <div>
+                <h4 class="font-bold text-gray-800">Location</h4>
+                <p class="text-sm text-gray-600">4212 Douglas Ave Ste F<br>Des Moines, IA 50310</p>
             </div>
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" name="phone" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email">
-          </div>
-
-          <div class="form-group">
-            <label for="people">Number of People *</label>
-            <select id="people" name="people" required>
-              <option value="">Select Number</option>
-              <option value="1">1 Person</option>
-              <option value="2">2 People</option>
-              <option value="3">3 People</option>
-              <option value="4">4 People</option>
-              <option value="5+">5+ People (Call for Group Booking)</option>
-            </select>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="date">Preferred Date *</label>
-              <input type="date" id="date" name="date" required>
+        </div>
+        <div class="p-6 flex items-center space-x-4">
+            <div class="bg-yellow-50 p-3 rounded-full text-yellow-600">
+                <i class="fas fa-phone-alt text-xl"></i>
             </div>
-            <div class="form-group">
-              <label for="time">Preferred Time *</label>
-              <input type="time" id="time" name="time" min="09:00" max="22:00" required>
+            <div>
+                <h4 class="font-bold text-gray-800">Call Us</h4>
+                <p class="text-sm text-gray-600">
+                    <a href="tel:5153461298" class="hover:text-yellow-600 transition">515-346-1298</a>
+                </p>
+                <p class="text-xs text-gray-500">Appointments available</p>
             </div>
-          </div>
+        </div>
+        <div class="p-6 flex items-center space-x-4">
+            <div class="bg-yellow-50 p-3 rounded-full text-yellow-600">
+                <i class="fas fa-clock text-xl"></i>
+            </div>
+            <div>
+                <h4 class="font-bold text-gray-800">Opening Hours</h4>
+                <p class="text-sm text-gray-600">Mon - Sun: 9:00 AM - 10:00 PM</p>
+            </div>
+        </div>
+    </div>
 
-          <div class="form-group">
-            <label for="service">Preferred Service</label>
-            <select id="service" name="service">
-              <option value="">Select a Service</option>
-              <option value="Full Body Massage (Swedish/Deep Tissue) - 30min">Full Body Massage (30min) - $50 Cash/$55 Card</option>
-              <option value="Full Body Massage (Swedish/Deep Tissue) - 60min">Full Body Massage (60min) - $70 Cash/$75 Card</option>
-              <option value="Full Body Massage (Swedish/Deep Tissue) - 90min">Full Body Massage (90min) - $100 Cash/$105 Card</option>
-              <option value="Combo Special (Body+Foot) - 60min">Combo Special (Body+Foot) 60min - $70 Cash/$75 Card</option>
-              <option value="Combo Special (Body+Foot) - 90min">Combo Special (Body+Foot) 90min - $100 Cash/$105 Card</option>
-              <option value="Foot Massage (cloth on) - 30min">Foot Massage (30min) - $35 Cash/$40 Card</option>
-              <option value="Foot Massage (Head+Arm+Foot+Back) - 60min">Foot Massage (Head+Arm+Foot+Back) 60min - $60 Cash/$65 Card</option>
-              <option value="Foot Massage (Head+Arm+Foot+Back) - 90min">Foot Massage (Head+Arm+Foot+Back) 90min - $90 Cash/$95 Card</option>
-              <option value="Chair Massage - 15min">Chair Massage (15min) - $20</option>
-              <option value="Chair Massage - 20min">Chair Massage (20min) - $30</option>
-              <option value="Chair Massage - 30min">Chair Massage (30min) - $40</option>
-            </select>
-          </div>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Choose Us?</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">At Elite Massage Therapy & Spa, we are dedicated to providing you with the ultimate relaxation experience.</p>
+            </div>
 
-          <div class="form-group">
-            <label for="addons">Add-ons (Optional)</label>
-            <select id="addons" name="addons" multiple>
-              <option value="Hot Stone (+$10)">Hot Stone (+$10)</option>
-              <option value="Essential Oil (+$10)">Essential Oil (+$10)</option>
-              <option value="CBD Oil/Cream (+$10)">CBD Oil/Cream (+$10)</option>
-            </select>
-            <small style="color: #666;">Hold Ctrl (PC) or Cmd (Mac) to select multiple options</small>
-          </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 text-center group">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-600 transition duration-300">
+                        <i class="fas fa-spa text-yellow-600 text-2xl group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Expert Therapists</h3>
+                    <p class="text-gray-600">Our certified professionals use proven techniques to relieve stress and tension.</p>
+                </div>
 
-          <div class="form-group">
-            <label for="notes">Special Requests</label>
-            <textarea id="notes" name="notes" rows="3" placeholder="Any preferences, health considerations, or special requests..."></textarea>
-          </div>
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 text-center group">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-600 transition duration-300">
+                        <i class="fas fa-leaf text-yellow-600 text-2xl group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Natural Products</h3>
+                    <p class="text-gray-600">We use high-quality, organic oils and lotions to nourish your skin safely.</p>
+                </div>
 
-          <button type="submit" class="submit-btn">Request Appointment</button>
-          <p style="font-size: 0.9rem; color: #777; margin-top: 15px; text-align: center;">
-            We'll contact you within 30 minutes to confirm your appointment details.
-          </p>
-        </form>
-      </div>
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 text-center group">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-600 transition duration-300">
+                        <i class="fas fa-heart text-yellow-600 text-2xl group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Peaceful Environment</h3>
+                    <p class="text-gray-600">Escape the city noise in our serene, clean, and comfortable private rooms.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services">
-      <h2>Our Massage Services</h2>
-      <h4>Hover or tap for detailed pricing information</h4>
-      <div class="services">
-        <div class="service-box">
-          <h3>Full Body Massage</h3>
-          <p>
-            Choose between Swedish relaxation or Deep Tissue therapy massage to target your specific needs and preferences.
-          </p>
-          <div class="price-wrapper">
-            <h4>30 min: $50 Cash / $55 Card</h4>
-            <h4>60 min: $70 Cash / $75 Card</h4>
-            <h4>90 min: $100 Cash / $105 Card</h4>
-          </div>
-        </div>
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
 
-        <div class="service-box">
-          <h3>Combo Special (Body + Foot)</h3>
-          <p>
-            Get the best of both worlds with our combination massage that includes both body and foot massage for complete relaxation.
-          </p>
-          <div class="price-wrapper">
-            <h4>60 min: $70 Cash / $75 Card</h4>
-            <h4>90 min: $100 Cash / $105 Card</h4>
-          </div>
-        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+                <!-- Service Item -->
+                <div class="flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                    <div class="md:w-1/2 relative h-64 md:h-auto">
+                        <img src="https://images.squarespace-cdn.com/content/v1/5d5f2058a79cbf000111652a/1586842536251-IY8XEBZ4JINBCSKZKAHT/FaceMassage.jpg" alt="Face Massage" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold mb-2">Face & Head Massage</h3>
+                        <p class="text-gray-600 mb-4">Relieve tension headaches and improve circulation with our specialized head and face massage.</p>
+                        <span class="text-yellow-600 font-bold">Call for Pricing</span>
+                    </div>
+                </div>
 
-        <div class="service-box">
-          <h3>Foot Massage</h3>
-          <p>
-            Our signature foot massage with cloth on, or comprehensive treatment including Head, Arm, Foot and Back massage.
-          </p>
-          <div class="price-wrapper">
-            <h4>30 min (cloth on): $35 Cash / $40 Card</h4>
-            <h4>60 min (Head+Arm+Foot+Back): $60 Cash / $65 Card</h4>
-            <h4>90 min (Head+Arm+Foot+Back): $90 Cash / $95 Card</h4>
-          </div>
-        </div>
+                <!-- Service Item -->
+                <div class="flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                    <div class="md:w-1/2 relative h-64 md:h-auto">
+                        <img src="https://spaandmassage.co.uk/wp-content/uploads/2025/08/guided_foot_pressure_points_ut1pv.jpg" alt="Foot Massage" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold mb-2">Foot Reflexology</h3>
+                        <p class="text-gray-600 mb-4">Restore balance to your body through pressure points in your feet. Perfect for tired legs.</p>
+                        <span class="text-yellow-600 font-bold">Call for Pricing</span>
+                    </div>
+                </div>
+                
+                 <!-- Service Item -->
+                <div class="flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                    <div class="md:w-1/2 relative h-64 md:h-auto">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1L-0O6Juxasb8QicSAXdnWLSQjLrVvGVr8HPij_dvsgW7cWCeMVBGB-12hqGhPUkx5oA&usqp=CAU" alt="Body Massage" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold mb-2">Full Body Massage</h3>
+                        <p class="text-gray-600 mb-4">A complete relaxation experience melting away stress from head to toe. Deep tissue or Swedish available.</p>
+                        <span class="text-yellow-600 font-bold">Call for Pricing</span>
+                    </div>
+                </div>
 
-        <div class="service-box">
-          <h3>Chair Massage</h3>
-          <p>
-            Quick and convenient chair massage perfect for targeting neck, shoulders, and back tension during your busy day.
-          </p>
+                <!-- Service Item -->
+                 <div class="flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                    <div class="md:w-1/2 relative h-64 md:h-auto">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hot Stone" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold mb-2">Hot Stone Therapy</h3>
+                        <p class="text-gray-600 mb-4">Heated stones placed on key points of the body to relax muscles and improve circulation.</p>
+                        <span class="text-yellow-600 font-bold">Call for Pricing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section (Carousel) -->
+    <section id="gallery" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Our Gallery</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+                <p class="mt-4 text-gray-400">Take a look inside our sanctuary.</p>
+            </div>
+
+            <!-- Carousel Component -->
+            <div class="carousel-container border-4 border-gray-800">
+                <div class="carousel-track" id="track">
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide">
+                        <img src="https://spaandmassage.co.uk/wp-content/uploads/2025/08/guided_foot_pressure_points_ut1pv.jpg" alt="Foot Massage Chart">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1L-0O6Juxasb8QicSAXdnWLSQjLrVvGVr8HPij_dvsgW7cWCeMVBGB-12hqGhPUkx5oA&usqp=CAU" alt="Relaxing Massage">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide">
+                        <img src="https://images.squarespace-cdn.com/content/v1/5d5f2058a79cbf000111652a/1586842536251-IY8XEBZ4JINBCSKZKAHT/FaceMassage.jpg" alt="Face Massage">
+                    </div>
+                </div>
+
+                <button class="carousel-btn prev-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <div class="carousel-dots" id="dotsContainer">
+                    <!-- Dots will be generated by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-900 serif-font">Get In Touch</h2>
+                    <p class="text-gray-600 mb-8">Ready to book your appointment or have a question? Contact us today.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 text-yellow-600 w-8"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Address</h4>
+                                <p class="text-gray-600">4212 Douglas Ave Ste F<br>Des Moines, IA 50310</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 text-yellow-600 w-8"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Phone</h4>
+                                <a href="tel:5153461298" class="text-gray-600 hover:text-yellow-600 text-lg font-semibold">515-346-1298</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-clock mt-1 text-yellow-600 w-8"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Business Hours</h4>
+                                <p class="text-gray-600">Everyday: 9.00AM - 10.00PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t border-gray-100">
+                        <a href="tel:5153461298" class="block w-full text-center bg-yellow-600 text-white py-4 rounded-lg font-bold hover:bg-yellow-700 transition shadow-md">
+                            Call to Book Appointment
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Map Embed -->
+                <div class="h-96 md:h-full rounded-xl overflow-hidden shadow-lg border-4 border-white">
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0" 
+                        loading="lazy" 
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2982.5768565785025!2d-93.67664422394592!3d41.62174297127164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ee974c2e6b2c4d%3A0x6b8c8c8c8c8c8c8c!2s4212%20Douglas%20Ave%20Ste%20F%2C%20Des%20Moines%2C%20IA%2050310!5e0!3m2!1sen!2sus!4v1700000000000">
+                        <!-- Note: The map query is dynamic based on the address provided -->
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <h3 class="serif-font text-2xl font-bold text-white"><span class="text-yellow-500">Elite</span> Massage</h3>
+                    <p class="text-gray-400 text-sm mt-2">Professional Massage Therapy in Des Moines.</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-yelp fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                &copy; <script>document.write(new Date().getFullYear())</script> Elite Massage Therapy & Spa. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Carousel Logic
+        const track = document.getElementById('track');
+        const slides = Array.from(track.children);
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const dotsContainer = document.getElementById('dotsContainer');
+
+        let currentIndex = 0;
+
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = Array.from(dotsContainer.children);
+
+        function updateDots(index) {
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            const amountToMove = -100 * currentIndex;
+            track.style.transform = `translateX(${amountToMove}%)`;
+            updateDots(currentIndex);
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex === slides.length - 1) {
+                goToSlide(0);
+            } else {
+                goToSlide(currentIndex + 1);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex === 0) {
+                goToSlide(slides.length - 1);
+            } else {
+                goToSlide(currentIndex - 1);
+            }
+        });
+
+        // Auto play carousel
+        setInterval(() => {
+            if (currentIndex === slides.length - 1) {
+                goToSlide(0);
+            } else {
+                goToSlide(currentIndex + 1);
+            }
+        }, 5000);
+
+    </script>
+</body>
+</html>
